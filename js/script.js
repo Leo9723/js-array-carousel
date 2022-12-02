@@ -45,55 +45,21 @@ next.addEventListener('click', function(){
     //incremento il suo valore di 1
     //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
     //stessa cosa per i cerchi
-/*     let itemactive_2; */
 
-    
-
-
-    items[itemActive].classList.remove('active');
-
-    let itemactive_2 = ++itemActive
-
-    items[itemactive_2].classList.add('active');
-
-    circles[itemActive].classList.remove('active');
-
-    circles[itemactive_2].classList.add('active');
-
-    circles[--itemactive_2].classList.remove('active');
-
-/*     if(itemActive == 4){
+    if(itemActive < items.length -1){
+        items[itemActive].classList.remove('active')
+        circles[itemActive].classList.remove('active')
+        itemActive++
+        items[itemActive].classList.add('active')
+        circles[itemActive].classList.add('active')
+    }
+    else {
+        items[itemActive].classList.remove('active')
+        circles[itemActive].classList.remove('active')
         itemActive = 0
-
-        items[itemActive].classList.remove('active');
-
-        let itemactive_2 = ++itemActive
-        circles[itemactive_2].classList.remove('active');
-        items[itemactive_2].classList.add('active');
-
-    } */
-
-    console.log(itemActive)
-
-    console.log(itemactive_2)
-/* 
-    itemactive_2 = items[itemActive +1]
-
-    itemactive_2.classList.add('active')
-
-    items[itemActive].classList.remove('active') */;
-
-
- /*    items[--itemactive_2].classList.remove('active'); */
-
-/*     circles[itemactive_2].classList.add('active');
-
-    circles[itemActive].classList.remove('active');
-
-    circles[--itemactive_2].classList.remove('active');
- */
-    
-
+        items[itemActive].classList.add('active')
+        circles[itemActive].classList.add('active')
+    }
 });
 
 prev.addEventListener('click', function(){
@@ -102,19 +68,20 @@ prev.addEventListener('click', function(){
     //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
     //stessa cosa per i cerchi
 
-    items[itemActive].classList.remove('active');
-
-    let itemactive_2 = --itemActive
-
-    items[itemactive_2].classList.add('active');
-    
-    circles[itemActive].classList.remove('active');
-
-    circles[itemactive_2].classList.add('active');
-
-    circles[++itemactive_2].classList.remove('active');
-    /* items[--itemactive_2].classList.remove('active'); */
-
+    if(itemActive > 0){
+        items[itemActive].classList.remove('active')
+        circles[itemActive].classList.remove('active')
+        itemActive--
+        items[itemActive].classList.add('active')
+        circles[itemActive].classList.add('active')
+    }
+    else {
+        items[itemActive].classList.remove('active')
+        circles[itemActive].classList.remove('active')
+        itemActive = items.length -1
+        items[itemActive].classList.add('active')
+        circles[itemActive].classList.add('active')
+    }
 })
 
 
